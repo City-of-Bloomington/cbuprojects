@@ -1,0 +1,27 @@
+README
+======
+CBUProjects is an application to track engineering projects.
+
+Each project has a number of fields, many are optional. Each project will have a number of phases till its complete. The software will allow to draw maps, draw timeline for project phases.
+
+The application is writen in java programming language using jsp and structs 2. Mysql is the database of choice.
+To install you will need to compile the src code using java compiler and deploy using one of servlet/jsp servers running apache tomcat or other servlet containers.
+
+In the WEB-INF directory, there is a file called web.xml.example, you will need to copy to a file with the name web.xml and set the url's in this file accordingly.
+
+The database setup is in the file context.xml.example in the directory META-INF. You would need to change the file name to context.xml and set the url and password for your database.
+
+The application assumes that you have a CAS authentication server. You will need the url for this server in WEB-INF/web.xml file mentioned before.
+
+You will need to create the database (mysql) with the name cbuprojects and your own password. Use the file scripts/mysql.sql file to create these tables.
+When database is created you will need to add a list of users who are allowed to use the system, look into database table users and add the users accordingly. You can add the users using the interface through the 'Admin' top menu. You need to have 'admin' role in the users database table to be able to do that. 
+
+When everything is set, you can point your browser to
+
+http://your server url:port/cbuprojects
+
+You will be promted for Username and Password from your CAS server.
+
+
+
+ 

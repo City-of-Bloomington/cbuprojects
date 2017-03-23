@@ -1,0 +1,13 @@
+<Context
+				reloadable="false" crossContext="true">
+			<Resource name="jdbc/MySQL_projects"
+			auth="Container"
+			type="javax.sql.DataSource" 
+			username="cbu_projects"
+			password="your pass"
+			driverClassName="com.mysql.jdbc.Driver"
+			url="jdbc:mysql://localhost:3306/cbu_projects" 
+			removeAbandoned="true"
+			removeAbandonedTimeout="60"
+			maxActive="6"  /> 
+</Context> 

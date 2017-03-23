@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+   <constant name="struts.devMode" value="true" />
+   <constant name="struts.ui.theme" value="simple" />
+   <constant name="struts.action.excludePattern" value="/Login*,/FeatureService*" />
+
+   <!-- to use this we need to use annotation
+				<constant name="struts.convention.result.path" value="/WEB-INF/jsp/" />
+   -->
+   <package name="default" extends="struts-default">
+
+		<!-- this is a global action that makes sure user is logged in -->
+		
+		<global-results>
+      <result name="login" type="redirect">welcome.action</result>
+		</global-results>
+		
+		<action name="home">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result>/Login</result>
+		</action>
+		
+		<action name="logout" class="project.LogoutAction">
+			<result>/WEB-INF/jsp/welcome.jsp</result>
+		</action>	 
+		
+		<action name="welcome" class="project.WelcomeAction">
+			<result name="success">/WEB-INF/jsp/welcome.jsp</result>
+			<result name="login">/Login</result>	   
+		</action>
+	  
+		<action name="project" 
+						class="project.ProjectAction" 
+						method="execute">
+			<result>/WEB-INF/jsp/project.jsp</result>
+			<result name="error">/WEB-INF/jsp/project.jsp</result>
+			<result name="view">/WEB-INF/jsp/projectView.jsp</result>
+			<result name="map">/WEB-INF/jsp/viewMap.jsp</result>
+			<result name="search" type="redirectAction">
+        <param name="actionName">search</param>
+				<param name="actionMessages">${actionMessages}</param>				
+      </result>								
+		</action>
+		
+		<action name="phase" 
+						class="project.PhaseAction" 
+						method="execute">
+			<result name="input">/WEB-INF/jsp/phase.jsp</result>			
+			<result name="error">/WEB-INF/jsp/phase.jsp</result>
+			<result name="view">/WEB-INF/jsp/phaseView.jsp</result>
+			<result name="noproject">/WEB-INF/jsp/noproject.jsp</result>
+			<result name="success" type="redirectAction">
+        <param name="actionName">project</param>
+        <param name="action">View</param>
+        <param name="id">${project_id}</param>
+				<param name="actionMessages">${actionMessages}</param>				
+      </result>					
+		</action>
+		<action name="genphase" 
+						class="project.GenPhaseAction" 
+						method="execute">
+			<result name="input">/WEB-INF/jsp/generate_phases.jsp</result>			
+			<result name="error">/WEB-INF/jsp/generate_phases.jsp</result>
+			<result name="success">/WEB-INF/jsp/generate_phases.jsp</result>
+		</action>
+		<action name="activity" 
+						class="project.PhaseActivityAction" 
+						method="execute">
+			<result name="input">/WEB-INF/jsp/activity.jsp</result>			
+			<result name="error">/WEB-INF/jsp/activity.jsp</result>
+			<result name="success">/WEB-INF/jsp/activity.jsp</result>
+		</action>		
+		<action name="type" 
+						class="project.TypeAction" 
+						method="execute">
+			<result>/WEB-INF/jsp/type.jsp</result>
+			<result name="error">/WEB-INF/jsp/type.jsp</result>
+			<result name="edit">/WEB-INF/jsp/type.jsp</result>
+		</action>
+		<action name="user" 
+						class="project.UserAction" 
+						method="execute">
+			<result>/WEB-INF/jsp/user.jsp</result>
+			<result name="error">/WEB-INF/jsp/user.jsp</result>
+			<result name="edit">/WEB-INF/jsp/user.jsp</result>
+		</action>		
+		<action name="search" 
+						class="project.SearchAction" 
+						method="execute">
+			<result name="input">/WEB-INF/jsp/search.jsp</result>		
+			<result name="error">/WEB-INF/jsp/search.jsp</result>
+			<result name="success">/WEB-INF/jsp/search.jsp</result>
+			<result name="showMap">/WEB-INF/jsp/showMap.jsp</result>			
+		</action>
+		<action name="timeline" 
+						class="project.TimelineAction" 
+						method="execute">
+			<result name="error">/WEB-INF/jsp/timelineInput.jsp</result>
+			<result name="success">/WEB-INF/jsp/timelineInput.jsp</result>
+			<result name="timeline">/WEB-INF/jsp/timeline.jsp</result>
+			<result name="timeline_actual">/WEB-INF/jsp/timeline_actual.jsp</result>
+		</action>		
+		<action name="map" 
+						class="project.MapAction" 
+						method="execute">
+			<result name="input">/WEB-INF/jsp/editMap.jsp</result>		
+			<result name="error">/WEB-INF/jsp/editMap.jsp</result>
+			<result name="success" type="redirectAction">
+        <param name="actionName">project</param>
+        <param name="action">Edit</param>
+        <param name="id">${id}</param>
+				<param name="actionMessages">${actionMessages}</param>				
+      </result>			
+		</action>		
+
+		<action name="report" 
+						class="project.ReportAction" 
+						method="execute">
+			<result name="input">/WEB-INF/jsp/reportInput.jsp</result>		
+			<result name="error">/WEB-INF/jsp/reportInput.jsp</result>
+			<result name="success">/WEB-INF/jsp/reportResult.jsp</result>
+		</action>
+   </package>
+
+</struts>
