@@ -34,8 +34,8 @@ public class Project implements java.io.Serializable{
 				cert_warranty_type="", cert_warranty_other="";
 		String status = "Active";
 		List<String> type_list = null;
-		String[] type_names = {"","Water","Sewer","Wastewater"};
-		String[] funding_names = {"","Water","Sewer","Wastewater"};
+		String[] type_names = {"","Water","Wastewater","Stormwater"};
+		String[] funding_names = {"","Water","Wastewater","Stormwater"};
 		// example of geometry POINT(18 23), LINESTRING(0 0, 1 2,2 4)
 		// polygons consist of linestrings, a closed exterior boundary and 
 		// POLYGON((0 0,8 0,12 9,0 9,0 0),(5 3,4 5,7 9,3 7, 2 5))
