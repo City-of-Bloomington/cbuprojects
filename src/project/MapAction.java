@@ -12,11 +12,12 @@ import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.util.ServletContextAware;
 import org.apache.struts2.interceptor.SessionAware;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class MapAction extends ActionSupport implements SessionAware, ServletContextAware{
     private static final long serialVersionUID = 290L;
-		static Logger logger = Logger.getLogger(MapAction.class);
+		static Logger logger = LogManager.getLogger(MapAction.class);
 		private ServletContext ctx;
 		private Map<String, Object> sessionMap;
 		private MapItem mapItem = null;

@@ -6,13 +6,13 @@ package project;
  */
 import java.sql.*;
 import java.text.SimpleDateFormat;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PhaseActivity extends Type{
 
 		static final long serialVersionUID = 115L;		
-		static Logger logger = Logger.getLogger(PhaseActivity.class);
+		static Logger logger = LogManager.getLogger(PhaseActivity.class);
 		static SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");		
 		String date="", phase_id="", user_id="";
 		User user = null;

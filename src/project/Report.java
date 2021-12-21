@@ -10,12 +10,12 @@ import java.sql.*;
 import java.io.*;
 import java.text.*;
 import javax.sql.*;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Report{
 	
-		static Logger logger = Logger.getLogger(Report.class);
+		static Logger logger = LogManager.getLogger(Report.class);
 		static final long serialVersionUID = 70L;
 		static SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 		NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance();	

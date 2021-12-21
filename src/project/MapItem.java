@@ -5,9 +5,8 @@ package project;
  * @author W. Sibo <sibow@bloomington.in.gov>
  */
 import java.sql.*;
-import javax.naming.*;
-import javax.naming.directory.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * we are assuming that each project has one map item, either point
  * or linestring but this may change later
@@ -16,7 +15,7 @@ public class MapItem implements java.io.Serializable{
 
     String id = "", geometry="", name="";
 		static final long serialVersionUID = 115L;		
-		static Logger logger = Logger.getLogger(MapItem.class);
+		static Logger logger = LogManager.getLogger(MapItem.class);
     public MapItem(){
     }
     public MapItem(String val){

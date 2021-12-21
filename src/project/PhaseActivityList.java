@@ -7,14 +7,14 @@ package project;
 import java.sql.*;
 import java.util.*;
 import java.text.SimpleDateFormat;
-import org.apache.log4j.Logger;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PhaseActivityList{
 
 		boolean debug = false;
 		static final long serialVersionUID = 125L;		
-		static Logger logger = Logger.getLogger(PhaseActivityList.class);
+		static Logger logger = LogManager.getLogger(PhaseActivityList.class);
 		static SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");		
 		String date_from="", date_to="", phase_id="", id="";
 		

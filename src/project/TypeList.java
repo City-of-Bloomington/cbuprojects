@@ -8,13 +8,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TypeList{
 
     String tableName ="types";
 		static final long serialVersionUID = 120L;		
-		static Logger logger = Logger.getLogger(TypeList.class);
+		static Logger logger = LogManager.getLogger(TypeList.class);
 		boolean activeOnly = false;
 		
 		List<Type> types = null;

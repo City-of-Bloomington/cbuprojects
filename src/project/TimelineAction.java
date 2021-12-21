@@ -12,13 +12,13 @@ import com.opensymphony.xwork2.ModelDriven;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.ServletActionContext;  
-
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class TimelineAction extends TopAction{
 
 		static final long serialVersionUID = 34L;	
-		static Logger logger = Logger.getLogger(TimelineAction.class);
+		static Logger logger = LogManager.getLogger(TimelineAction.class);
 		//
 		ProjectList projectList = null;
 		List<Project> projects = null;

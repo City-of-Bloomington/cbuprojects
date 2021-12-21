@@ -5,16 +5,15 @@ package project;
  * @author W. Sibo <sibow@bloomington.in.gov>
  */
 import java.sql.*;
-import javax.naming.*;
-import javax.naming.directory.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Type implements java.io.Serializable{
 
     String id = "", name="", inactive="", tableName="types";
     boolean debug = false;
 		static final long serialVersionUID = 110L;		
-		static Logger logger = Logger.getLogger(Type.class);
+		static Logger logger = LogManager.getLogger(Type.class);
     public Type(){
     }
     public Type(String val){

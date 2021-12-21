@@ -10,17 +10,16 @@ import java.io.*;
 import java.text.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.naming.*;
 import javax.sql.*;
-import javax.naming.directory.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class PhaseList implements java.io.Serializable{
 
 		static final long serialVersionUID = 38L;	
    
-		static Logger logger = Logger.getLogger(PhaseList.class);
+		static Logger logger = LogManager.getLogger(PhaseList.class);
 		static SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");	
 		String id="", which_date="r.schedule_start_date", project_id="",
 				name="", user_id="";

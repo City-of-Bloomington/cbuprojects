@@ -6,7 +6,8 @@ package project;
  */
 import java.sql.*;
 import java.util.HashMap;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  * User class
  *
@@ -14,11 +15,11 @@ import org.apache.log4j.Logger;
 
 public class User implements java.io.Serializable{
 
+		static final long serialVersionUID = 135L;		
+		static Logger logger = LogManager.getLogger(User.class);		
     String userid="", fullname="", role="", id="", active="", roleName="",
 				type=""; 
     boolean userExists = false;
-		static final long serialVersionUID = 135L;		
-		static Logger logger = Logger.getLogger(User.class);
 		HashMap<String, String> userRoles = null;
     String errors = "";
     public User(){

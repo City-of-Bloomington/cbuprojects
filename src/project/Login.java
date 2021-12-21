@@ -5,21 +5,16 @@ package project;
  * @author W. Sibo <sibow@bloomington.in.gov>
  */
 import java.util.*;
-import java.sql.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import javax.naming.*;
-import javax.naming.directory.*;
-import javax.sql.*;
 import java.net.URL;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * All users login form.
  *
- * @author Walid Sibo
- * @version 1.00 08/07/2003
  */
 
 public class Login extends HttpServlet{
@@ -30,7 +25,7 @@ public class Login extends HttpServlet{
     String url="";
     boolean debug = false;
 		static final long serialVersionUID = 60L;	
-		static Logger logger = Logger.getLogger(Login.class);
+		static Logger logger = LogManager.getLogger(Login.class);
     /**
      * Generates the login form for all users.
      *

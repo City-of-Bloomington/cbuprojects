@@ -5,9 +5,8 @@
  */
 package project;
 import java.sql.*;
-import javax.naming.*;
-import javax.naming.directory.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 public class ReportRow implements java.io.Serializable{
@@ -16,7 +15,7 @@ public class ReportRow implements java.io.Serializable{
 		boolean types[]={true, false}; // text or not (number)
 		int size = 2;
 		static final long serialVersionUID = 90L;		
-		static Logger logger = Logger.getLogger(ReportRow.class);
+		static Logger logger = LogManager.getLogger(ReportRow.class);
 		public ReportRow(){
 		}
     public ReportRow(int size){
